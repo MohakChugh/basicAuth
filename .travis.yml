@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "8.11"
+branches:
+  only:
+    - master
+before_script:
+  - npm i
+cache:
+  npm: true
+  directories:
+    - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: A3gyuVMqMNOHzf8uBXSTkWhI0iy8/lv0X0bB16awXYdTIVKJ+CXT8OtSiQrMLt3A3TkvmuynDQGziHrX7EsOgJx4ZT2sb18srAOfHRkDENxUmyxEy2w4YkpAGDRYeQFn7DvZ9nsIYsg8J7cb9ghhOxsJsduH2ezcnE85Mj5Ds67H3lmKygaJKMkOZyQu7w+eQHdMrsMvwAoUaXkCUrPqRcg0mxuea8TLDFMvc0zgNGrFM+LJIMQgzfzkzQLfneyMVDHODXRneWYAL+AOXqhqveIohrZcpsEs7vmFaIFk1kdHkbJj0c2xaD7/aUpMgFRQm5YdUE/4V65P7MkHGgbH5nfXrOSI0/+4QvSdJGg9ogzN/K2GHX0YsXuMSRG3tA5bX8k59jJfTF3UsSJezgO9VSANP92VC9+wzqMnfPK7a7NRnB/3SI1RFXgROrjI1sOk/RaO6meo1b26ZG35MITbejZyE0MEC0K8C7uQj/rjxPhdL7EGDdg5AImxDF9CPgqJPyvgEIcyEpqeLmdmNbZrVjSDFcyvCyM7N+PhBFzaEwXDCM0rIpwGQcmMAc+OzaMUEhHWpDaiyb5VDULa1qw9Oc0HtZgpBaG9vgRZUSnk6gbaEcXbNbuOFLvVXSNva/HRBXArwMEIfrG+q+zUAmi0XTS6a3cvp3B1Mp4kYN/C4hE=
+  app: "pipeline-test-mohak"
+after_deploy:
+  - echo "DEPLOYMENT DONE"
